@@ -8,13 +8,13 @@ html {
     box-sizing: inherit; /* keep */
 }
 body {
-    font-family: sans-serif;
+    font-family: 'Varela', 'Tahoma', sans-serif;
     background: #5598b2; /* keep */
     color: #333; /* keep */
     margin: 0; /* keep */
 }
 h1, h2 {
-    font-family: serif;
+    font-family: 'Playfair Display', 'Lucida Bright', 'Palatino', serif;
 }
 #tagline {
     font-style: italic;
@@ -38,10 +38,15 @@ img {
     margin: auto; /* keep */
     display: grid; /* keep */
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, auto);
+    grid-template-rows: repeat(7, auto);
     grid-template-areas:
-        "header arial georgia pairing bobwhite-quail"
-        "readability line-length helvetica typeface footer";
+      "header header header header header"
+      "pairing pairing pairing arial georgia"
+      "bobwhite-quail bobwhite-quail readability readability readability"
+      "bobwhite-quail bobwhite-quail line-height line-height line-height"
+      "typeface typeface typeface helvetica helvetica"
+      "typeface typeface typeface . ."
+      "footer footer footer footer footer";
 }
 
 /* all grid items -

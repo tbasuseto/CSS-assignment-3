@@ -15,6 +15,7 @@ body {
 }
 h1, h2 {
     font-family: 'Playfair Display', 'Lucida Bright', 'Palatino', serif;
+    margin: 0;
 }
 #tagline {
     font-style: italic;
@@ -43,7 +44,7 @@ img {
       "header header header header header"
       "pairing pairing pairing arial georgia"
       "bobwhite-quail bobwhite-quail readability readability readability"
-      "bobwhite-quail bobwhite-quail line-height line-height line-height"
+      "bobwhite-quail bobwhite-quail line-length line-length line-length"
       "typeface typeface typeface helvetica helvetica"
       "typeface typeface typeface . ."
       "footer footer footer footer footer";
@@ -58,43 +59,89 @@ img {
 header {
     grid-area: header; /* keep */
     background: #fff; /* keep */
+    text-align: center;
+    font-size: 1.3rem;
+    padding: 1rem;
 }
+
 #arial {
     grid-area: arial; /* keep */
     background: #a8e8ff; /* keep */
+    padding-top: 2rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    font-size: .8rem;
 }
 #georgia {
     grid-area: georgia; /* keep */
     background: #a8e8ff; /* keep */
+    padding-top: 2rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    font-size: .8rem;
 }
 #pairing {
     grid-area: pairing; /* keep */
     background: #a8e8ff; /* keep */
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 3rem;
+    padding-top: 2rem;
+    margin: 0;
+    font-size: 1.2rem;
 }
 #bobwhite-quail {
     grid-area: bobwhite-quail; /* keep */
     background: #d2f4ff; /* keep */
+    padding-left: 3rem;
+    padding-right: 1rem;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    font-size: .8rem;
 }
 #readability {
     grid-area: readability; /* keep */
     background: #d2f4ff; /* keep */
+    padding-right: 3rem;
+    padding-top: 3rem;
+    padding-left: 1rem;
 }
 #line-length {
     grid-area: line-length; /* keep */
     background: #d2f4ff; /* keep */
+    padding-top: 3rem;
+    padding-right: 3rem;
+    padding-left: 1rem;
+    padding-bottom: 6rem;
 }
 #helvetica {
     grid-area: helvetica; /* keep */
     background: #fff; /* keep */
+    padding: 2rem;
+    margin-top: 3rem;
+    margin-right: 2.5rem;
+    font-size: .8rem;
 }
 #typeface {
     grid-area: typeface; /* keep */
     color: #d2f4ff; /* keep */
     background: #5598b2; /* keep */
+    padding-left: 3rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    line-height: 1.2rem;
+    text-shadow: .05em .05em .2em #000;
+    font-size: 0.9rem;
 }
 footer {
     grid-area: footer; /* keep */
     background: #b2988a; /* keep */
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.1rem;
 }
 
 /* end of all 10 grid items */
@@ -103,6 +150,7 @@ footer {
 /* pseudo classes */
 a {
     color: #7c6a60; /* keep */
+    text-shadow: none;
 }
 a:hover {
     color: #f4cdb7; /* keep */
@@ -110,3 +158,73 @@ a:hover {
 }
 
 /* media queries below - only 1 is needed */
+@media screen and (max-width: 500px){
+  #container {
+    grid-template-columns:repeat(2, 1fr);
+    grid-template-rows:repeat(9, auto);
+    grid-template-areas:
+      "header header"
+      "arial georgia"
+      "pairing pairing"
+      "bobwhite-quail bobwhite-quail"
+      "readability readability"
+      "line-length line-length"
+      "helvetica helvetica"
+      "typeface typeface"
+      "footer footer";
+  }
+
+  header {
+    padding: 2rem;
+  }
+  header img {
+    display: none;
+  }
+  #tagline {
+    font-size: 1.5rem;
+    padding: 1.3rem;
+  }
+
+  #arial {
+    padding-left: 1rem;
+    padding-right: 0.5rem;
+  }
+  #georgia {
+    padding-left: 0.5rem;
+    padding-right: 1rem;
+  }
+  #pairing {
+    padding-top: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  #bobwhite-quail {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+  }
+  #readability {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 0.5rem;
+  }
+  #line-length {
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+  }
+  #helvetica {
+    padding: 1rem;
+    margin:0;
+  }
+  #typeface {
+    padding-left: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+  }
+  footer {
+    padding: 1rem;
+    text-align: left;
+  }
+}
